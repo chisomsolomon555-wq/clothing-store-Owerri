@@ -2532,10 +2532,37 @@ function placeOrder(){
     `<div class="orc-total-row grand"><span>Total</span><span>&#8358;${tot.toLocaleString()}</span></div>`;
 
   // WhatsApp button — simple nudge message
-  const waMsg=`Hi E-Nuella! I just placed order ${ref}. Screenshot attached.`;
-  document.getElementById('orc-wa-btn').onclick=()=>{
-    window.open(`https://wa.me/23407064843803?text=${encodeURIComponent(waMsg)}`,'_blank');
-  };
+  const orderItems = cart.map(it =>
+  `• ${it.n} x${it.qty} - ₦${(it.p * it.qty).toLocaleString()}`
+).join('\n');
+
+const waMsg = `
+🛍️ NEW ORDER
+
+Order Ref: ${ref}
+
+Name: ${name}
+Phone: ${phone}
+
+Address:
+${addr}
+
+${note ? `Note: ${note}\n` : ''}
+
+Items:
+${orderItems}
+
+Subtotal: ₦${sub.toLocaleString()}
+Delivery: ₦1,000
+Total: ₦${tot.toLocaleString()}
+`;
+
+document.getElementById('orc-wa-btn').onclick = () => {
+  window.open(
+    `https://wa.me/2347064843803?text=${encodeURIComponent(waMsg)}`,
+    '_blank'
+  );
+};
 
   // Reset screenshot button state
   const ssBtn = document.getElementById('orc-screenshot-btn');
