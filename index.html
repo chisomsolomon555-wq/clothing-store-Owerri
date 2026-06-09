@@ -1643,7 +1643,7 @@ footer::before{content:'';position:absolute;top:0;left:52px;right:52px;height:1p
     <div class="sl2">
       <a href="https://www.instagram.com/e_nuella_special_collection_?igsh=MTlmdXFocXRvc2ZyZw%3D%3D&utm_source=qr" title="Instagram">IG</a>
       <a href="https://wa.me/2347064843803" target="_blank" title="WhatsApp">WA</a>
-      <a href="www.tiktok.com/@e_nuellasc" title="TikTok">TK</a>
+     <a href="https://www.tiktok.com/@e_nuellasc" target="_blank" rel="noopener noreferrer" title="TikTok">TK</a>
     </div>
   </div>
 </footer>
@@ -2455,7 +2455,7 @@ function openCart(){
  const totEl=document.querySelector('.stot');
     if(totEl){
       const sub=cart.reduce((a,b)=>a+b.p*b.qty,0);
-      const tot=sub+2000;
+      const tot=sub;
         gsap.to({v:0},{v:tot,duration:1.4,ease:'power2.out',onUpdate:function(){
         totEl.textContent='₦'+Math.round(this.targets()[0].v).toLocaleString();
       }});  
@@ -2477,8 +2477,9 @@ it.cat==='shoes' ? 'Slippers Fits' :
 it.cat==='watches' ? 'Bag Sets' :
 it.cat==='glasses' ? 'Men Outfits' :
 it.catit.cat}</div><div class="ccn">${it.n}</div><div class="ccp"><span class="cart-price-anim" data-val="${it.p*it.qty}">₦${(it.p*it.qty).toLocaleString()}</span></div><div class="qr"><button class="qb" onclick="chgQ('${it.id}',-1)">&#8722;</button><div class="qn">${it.qty}</div><button class="qb" onclick="chgQ('${it.id}',1)">+</button><button class="rb" onclick="rmCart('${it.id}')">&#215;</button></div></div></div>`).join('');
-  foot.innerHTML=`<div class="sr2"><span>Subtotal</span><span>&#8358;${sub.toLocaleString()}</span></div><div class="sr2"><span>Delivery</span><span>&#8358;1,000</span></div><div class="sr2" style="border:none;padding-top:10px"><span style="font-size:11px;letter-spacing:.1em;text-transform:uppercase">Total</span><span class="stot">&#8358;${(sub+1000).toLocaleString()}</span></div><button class="bco" onclick="closeCart();showPage('chk')">Proceed to Checkout</button><div class="pay-badges"><div class="pay-badge"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="2" y="5" width="20" height="14" rx="2"/><line x1="2" y1="10" x2="22" y2="10"/></svg>Bank Transfer</div><div class="pay-badge"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M3 9l9-7 9 7v11a2 2 0 01-2 2H5a2 2 0 01-2-2z"/><path d="M9 22V12h6v10"/></svg>Cash on Delivery</div></div><div class="pay-secure"><svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="11" width="18" height="11" rx="2"/><path d="M7 11V7a5 5 0 0110 0v4"/></svg>Secure &amp; Trusted</div>`;
-}
+ foot.innerHTML=`<div class="sr2"><span>Subtotal</span><span>&#8358;${sub.toLocaleString()}</span></div><div class="sr2"><span>Delivery</span><span>&#8358;0</span></div><div class="sr2" style="border:none;padding-top:10px"><span style="font-size:11px;letter-spacing:.1em;text-transform:uppercase">Total</span><span class="stot">&#8358;${sub.toLocaleString()}</span></div><button class="bco" onclick="closeCart();showPage('chk')">Proceed to Checkout</button><div class="pay-badges"><div class="pay-badge"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="2" y="5" width="20" height="14" rx="2"/><line x1="2" y1="10" x2="22" y2="10"/></svg>Bank Transfer</div><div class="pay-badge"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M3 9l9-7 9 7v11a2 2 0 01-2 2H5a2 2 0 01-2-2z"/><path d="M9 22V12h6v10"/></svg>Cash on Delivery</div></div><div class="pay-secure"><svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="11" width="18" height="11" rx="2"/><path d="M7 11V7a5 5 0 0110 0v4"/></svg>Secure &amp; Trusted</div>`;
+} 
+
 function chgQ(id,d){const it=cart.find(i=>i.id===id);if(!it)return;it.qty+=d;if(it.qty<=0)rmCart(id);else{updateBadge();renderCart();}}
 function rmCart(id){cart=cart.filter(i=>i.id!==id);updateBadge();renderCart();}
 
@@ -2492,7 +2493,9 @@ function rmCart(id){cart=cart.filter(i=>i.id!==id);updateBadge();renderCart();}
 function renderChk(){
   const sub=cart.reduce((a,b)=>a+b.p*b.qty,0);
   document.getElementById('c-items').innerHTML=cart.map(it=>`<div class="oi"><img src="${it.img}" alt="${it.n}"/><div><div class="oin">${it.n}</div><div class="oiq">Qty: ${it.qty}</div></div><div class="oip">&#8358;${(it.p*it.qty).toLocaleString()}</div></div>`).join('');
-  document.getElementById('c-totals').innerHTML=`<div class="or"><span>Subtotal</span><span>&#8358;${sub.toLocaleString()}</span></div><div class="or"><span>Delivery Fee</span><span>&#8358;1,000</span></div><div class="otr"><span style="font-size:11px;letter-spacing:.1em;text-transform:uppercase">Total</span><span class="otv">&#8358;${(sub+1000).toLocaleString()}</span></div>`;
+  document.getElementById('c-totals').innerHTML=
+`<div class="or"><span>Subtotal</span><span>&#8358;${sub.toLocaleString()}</span></div>
+<div class="otr"><span style="font-size:11px;letter-spacing:.1em;text-transform:uppercase">Total</span><span class="otv">&#8358;${sub.toLocaleString()}</span></div>`;
 }
 function genRef(){
   const chars='ABCDEFGHJKLMNPQRSTUVWXYZ23456789';
@@ -2507,7 +2510,7 @@ function placeOrder(){
   const addr=document.getElementById('c-addr').value.trim();
   const note=document.getElementById('c-note').value.trim();
   if(!name||!phone||!addr){showToast('Please fill in all required fields');return;}
-  const sub=cart.reduce((a,b)=>a+b.p*b.qty,0),tot=sub+1000;
+  const sub=cart.reduce((a,b)=>a+b.p*b.qty,0),tot=sub;
   const ref=genRef();
 
   // Populate confirmation card
@@ -2517,6 +2520,7 @@ function placeOrder(){
     `<div><span>Phone</span>${phone}</div>`+
     `<div><span>Address</span>${addr}</div>`+
     (note?`<div><span>Note</span>${note}</div>`:'');
+
   document.getElementById('orc-items').innerHTML=cart.map(it=>
     `<div class="orc-item-row">
       <img class="orc-item-img" src="${it.img}" alt="${it.n}"/>
@@ -2526,10 +2530,17 @@ function placeOrder(){
       </div>
       <div class="orc-item-price">&#8358;${(it.p*it.qty).toLocaleString()}</div>
     </div>`).join('');
-  document.getElementById('orc-totals').innerHTML=
-    `<div class="orc-total-row"><span>Subtotal</span><span>&#8358;${sub.toLocaleString()}</span></div>`+
-    `<div class="orc-total-row"><span>Delivery Fee</span><span>&#8358;1,000</span></div>`+
-    `<div class="orc-total-row grand"><span>Total</span><span>&#8358;${tot.toLocaleString()}</span></div>`;
+
+//*THE ONE I PASTED*//
+ document.getElementById('orc-totals').innerHTML=
+  `<div class="orc-total-row">
+      <span>Subtotal</span>
+      <span>&#8358;${sub.toLocaleString()}</span>
+   </div>`+
+  `<div class="orc-total-row grand">
+      <span>Total</span>
+      <span>&#8358;${tot.toLocaleString()}</span>
+   </div>`;
 
   // WhatsApp button — simple nudge message
   const orderItems = cart.map(it =>
@@ -2553,7 +2564,6 @@ Items:
 ${orderItems}
 
 Subtotal: ₦${sub.toLocaleString()}
-Delivery: ₦1,000
 Total: ₦${tot.toLocaleString()}
 `;
 
