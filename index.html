@@ -1130,6 +1130,49 @@ footer::before{content:'';position:absolute;top:0;left:52px;right:52px;height:1p
 }
 .pdm-delivery svg{flex-shrink:0;color:var(--acc)}
 .pdm-delivery strong{color:var(--wh);font-weight:500}
+
+.sold-tag{
+  position:absolute;
+  top:10px;
+  right:10px;
+  background: linear-gradient(135deg, #b22222, #ff3b3b);
+  color:#fff;
+  padding:6px 12px;
+  font-size:10px;
+  font-weight:700;
+  border-radius:20px;
+  letter-spacing:1.5px;
+  z-index:10;
+
+  /* premium glow */
+  box-shadow: 0 4px 15px rgba(178,34,34,0.35);
+
+  /* animation */
+  animation: soldPulse 1.8s ease-in-out infinite;
+  transform-origin: center;
+}
+@keyframes soldPulse{
+  0%{
+    transform: scale(1);
+    box-shadow: 0 4px 15px rgba(178,34,34,0.25);
+  }
+  50%{
+    transform: scale(1.08);
+    box-shadow: 0 6px 22px rgba(255,60,60,0.45);
+  }
+  100%{
+    transform: scale(1);
+    box-shadow: 0 4px 15px rgba(178,34,34,0.25);
+  }
+}
+
+
+
+
+
+
+
+
 </style>
 </head>
 <body>
@@ -1279,7 +1322,7 @@ footer::before{content:'';position:absolute;top:0;left:52px;right:52px;height:1p
 <!-- MAIN PAGE -->
 <div id="main">
 <section id="hero">
-  <img id="hero-bg" src="https://i.postimg.cc/Jh5FfYc6/567d2297-76d4-4509-a4a7-7363411c085e.jpg" alt="E-Nuella Collection"/>
+  <img id="hero-bg" src="https://i.postimg.cc/BvDg0bWZ/IMG-6269.jpg" alt="E-Nuella Collection"/>
   <div class="hero-img-overlay" id="hero-overlay"></div>
 
   <!-- Text -->
@@ -1653,7 +1696,7 @@ let recentlyViewed = (function(){try{return JSON.parse(localStorage.getItem('rkf
 // ===== DATA =====
 const D={
 clothes:[
-{n:'Short luxury dress',p:25000,img:'https://i.postimg.cc/tTBDdQsd/d5e1189a-9beb-45db-afdb-80931554734d-removebg-preview-(1).png'},
+{n:'Short luxury dress',p:25000,img:'https://i.postimg.cc/tTBDdQsd/d5e1189a-9beb-45db-afdb-80931554734d-removebg-preview-(1).png',},
 {n:'Long coloured gown',p:23000,img:'https://i.postimg.cc/t4gqDFv2/012702df-4872-4123-891f-689fa4533915-removebg-preview.png'},
 {n:'Yellow silk gown',p:22000,img:'https://i.postimg.cc/KcdXcLhT/e7f6018b-b51b-48cc-8ea7-6012ef7b03d3-removebg-preview.png'},
 {n:'Trendy warm Jupsuit',p:35000,img:'https://i.postimg.cc/Hspwyvgq/b35f7510-3fae-482d-ab14-90ab38af8fd9-removebg-preview.png'},
@@ -1668,15 +1711,15 @@ clothes:[
 {n:'Luxury Two Piece',p:35000,img:'https://i.postimg.cc/pdcHv6B0/00d62c98-d934-4050-b1eb-31bab2005024-removebg-preview.png'},
 {n:'Stripe Two Piece',p:35000,img:'https://i.postimg.cc/bwMgj027/574264e3-5d31-4850-a0c7-8616bdd3edd7.jpg'},
 {n:'Long Sleeveless Gown',p:25000,img:'https://i.postimg.cc/CL5bLBYS/88b8a3e0-b2c0-43b8-821a-8272db71492e-removebg-preview.png'},
-{n:'Luxury Shorts',p:24000,img:'https://i.postimg.cc/CMXxkzkx/d83f8130-9b3a-43aa-a8bf-0eec349fa719-removebg-preview.png'},
+{n:'Luxury Shorts',p:24000,img:'https://i.postimg.cc/CMXxkzkx/d83f8130-9b3a-43aa-a8bf-0eec349fa719-removebg-preview.png',sold:true},
 {n:'Corperate Trousers',p:25000,img:'https://i.postimg.cc/rsPjF5PR/edeb6166-cda2-4bf5-b0c5-03549f478ae6-removebg-preview.png'},
 {n:'Long Gown',p:23000,img:'https://i.postimg.cc/XY8LDZfx/IMG-5675-removebg-preview.png'},
-{n:'Blue Short Gown',p:23000,img:'https://i.postimg.cc/4N12jFZ9/IMG-5676-removebg-preview.png'},
+{n:'Blue Short Gown',p:23000,img:'https://i.postimg.cc/4N12jFZ9/IMG-5676-removebg-preview.png',sold:true},
 {n:'Premium Long Gown',p:25000,img:'https://i.postimg.cc/Rh4QR4Wd/IMG-5677-removebg-preview.png'},
 {n:'Maxi Light Green',p:35000,img:'https://i.postimg.cc/0NGzCm7R/IMG-5678-removebg-preview.png'},
-{n:'Flowered Maxi Print',p:35000,img:'https://i.postimg.cc/fbMzDP0L/IMG-5679-removebg-preview.png'},
+{n:'Flowered Maxi Print',p:35000,img:'https://i.postimg.cc/fbMzDP0L/IMG-5679-removebg-preview.png',sold:true},
 {n:'Red Two Piece',p:24000,img:'https://i.postimg.cc/Y0F0hWrP/IMG-5682-1-removebg-preview.png'},
-{n:'Red Shiny gown',p:25000,img:'https://i.postimg.cc/dV5CMGhc/IMG-5683-1-removebg-preview.png'},
+{n:'Red Shiny gown',p:25000,img:'https://i.postimg.cc/dV5CMGhc/IMG-5683-1-removebg-preview.png',sold:true},
 {n:'White Luxury Gown',p:25000,img:'https://i.postimg.cc/NfGZGwd6/IMG-5684-1-removebg-preview.png'},
 {n:'Red Tilt Gown',p:27000,img:'https://i.postimg.cc/LXNBNGjp/IMG-5685-1-removebg-preview.png'},
 {n:'Yellow Two piece',p:25000,img:'https://i.postimg.cc/8zgG1Yr4/4c3c4709-92d9-4259-b5f1-a589de693aab-(1).jpg'},
@@ -1689,7 +1732,7 @@ shoes:[
 {n:'Original Hermes Slides',p:35000,img:'https://i.postimg.cc/jdYmBcqf/28e761ed-a175-4bb7-a95f-770d699eb6b1.jpg'},
 {n:'Hermes SLides',p:25000,img:'https://i.postimg.cc/zDFFXFSz/8f3f1342-71e3-4eed-b5bc-f0668a68f076.jpg'},
 {n:'Mango Brand',p:22000,img:'https://i.postimg.cc/c4jgsvjx/5e323386-d628-40ec-8641-bef2d4bd3584.jpg'},
-{n:'Colorful Premium,',p:35000,img:'https://i.postimg.cc/mgjrPhpc/2c3ff965-ec9c-423b-a3c8-36a24b586fb6.jpg'},
+{n:'Colorful Premium,',p:35000,img:'https://i.postimg.cc/mgjrPhpc/2c3ff965-ec9c-423b-a3c8-36a24b586fb6.jpg',sold:true},
 {n:'ZYK Slides',p:25000,img:'https://i.postimg.cc/nh3HHgMY/4f0494e7-daf4-4fc3-af20-241fbefc36bb.jpg'},
 {n:'Ash Hermes',p:25000,img:'https://i.postimg.cc/Tw90SVtr/a27ef072-ccd4-4424-88b0-d4a8e853fbec-removebg-preview.png'},
 {n:'Zara Slides',p:23000,img:'https://i.postimg.cc/N08k98q9/71bc53d1-8047-48a3-a63b-5a1e75b68631.jpg'},
@@ -1714,27 +1757,27 @@ shoes:[
 {n:'Golden Zara Heel',p:25000,img:'https://i.postimg.cc/gjLmzHnb/IMG-6078-removebg-preview.png'},
 ],
 watches:[
-{n:'Black Xianliaga',p:30000,img:'https://i.postimg.cc/mg7HDKpR/bfb92732-c50d-4c85-9faf-3100b3ed4ff9.jpg'},
-{n:'Pink Bag',p:25000,img:'https://i.postimg.cc/fLCFh2Q0/aa5906bf-e833-4438-9982-cc79ed32f6df.jpg'},
-{n:'Brown Hermes ',p:35000,img:'https://i.postimg.cc/d1NBBzKb/5b7d31cc-6cf8-42a5-b444-ee23a2918d8b.jpg'},
+{n:'Black Xianliaga',p:30000,img:'https://i.postimg.cc/mg7HDKpR/bfb92732-c50d-4c85-9faf-3100b3ed4ff9.jpg',sold:true},
+{n:'Pink Bag',p:25000,img:'https://i.postimg.cc/fLCFh2Q0/aa5906bf-e833-4438-9982-cc79ed32f6df.jpg',sold:true},
+{n:'Brown Hermes ',p:35000,img:'https://i.postimg.cc/d1NBBzKb/5b7d31cc-6cf8-42a5-b444-ee23a2918d8b.jpg',sold:true},
 {n:'Queen Oxblood Bag',p:35000,img:'https://i.postimg.cc/s2666BY1/b8f0c576-72c9-4d17-b645-a0901020865f.jpg'},
 {n:'Hermes Bags',p:22000,img:'https://i.postimg.cc/0QCy7fYh/3a0148d9-b1d8-4986-848e-eac7a5c58e5a-removebg-preview.png'},
-{n:'Black Miu Bag',p:22000,img:'https://i.postimg.cc/k5qP3tRk/7b91e9d8-77cb-46f9-bc6c-4385c633a4b3-removebg-preview.png'},
-{n:'Royalciaga Bags',p:23000,img:'https://i.postimg.cc/htG39bxK/a8c79eb8-7971-4118-8ad5-3c85fde5ef96.jpg'},
-{n:' Pink Bag',p:22000,img:'https://i.postimg.cc/0jBn6vrD/a4efe661-87df-44be-9ca2-704d4d6a293c.jpg'},
-{n:' Bainidaishu Bag',p:23000,img:'https://i.postimg.cc/pX1XsLmd/01a132af-5a35-4d5e-b25b-c530d26ff730.jpg'},
+{n:'Black Miu Bag',p:22000,img:'https://i.postimg.cc/k5qP3tRk/7b91e9d8-77cb-46f9-bc6c-4385c633a4b3-removebg-preview.png',sold:true},
+{n:'Royalciaga Bags',p:23000,img:'https://i.postimg.cc/htG39bxK/a8c79eb8-7971-4118-8ad5-3c85fde5ef96.jpg',sold:true},
+{n:' Pink Medium Bag',p:22000,img:'https://i.postimg.cc/0jBn6vrD/a4efe661-87df-44be-9ca2-704d4d6a293c.jpg'},
+{n:' Bainidaishu Bag',p:23000,img:'https://i.postimg.cc/pX1XsLmd/01a132af-5a35-4d5e-b25b-c530d26ff730.jpg',sold:true},
 {n:' Purple Movdarl Bag',p:40000,img:'https://i.postimg.cc/DfpTTY7m/275507FB-6E35-4BB0-B29B-BE3931FECB8A.jpg'},
 {n:' Roserd Bag with box',p:30000,img:'https://i.postimg.cc/gjCt0hM5/522C4629-6D86-4814-991C-CF35C34FB9C0.jpg'},
 {n:' Brown classy Bag',p:35000,img:'https://i.postimg.cc/CLjpqMjw/5b8e93fa-cfb5-4b47-9254-49756541cd97.jpg'},
 {n:' Premium Purple bag',p:45000,img:'https://i.postimg.cc/GmcVTFLP/FF4D57FD-F660-47B7-97BF-163B6378472E.jpg'},
 {n:' Black Classy Bag',p:35000,img:'https://i.postimg.cc/Wb40DtR4/E49E212E-F8B4-40AF-A431-A2CED39B3D10.jpg'},
 {n:' Jeans Luxury Bag',p:22000,img:'https://i.postimg.cc/B6MXscv0/d2430b27-9880-40df-a291-207effe82b29.jpg'},
-{n:' Brown Hermes Bag',p:22000,img:'https://i.postimg.cc/0yR5THC5/CCA8FD35-7062-4C8A-BF5C-0F84F90F991E.jpg'},
+{n:' Brown Hermes Bag',p:22000,img:'https://i.postimg.cc/0yR5THC5/CCA8FD35-7062-4C8A-BF5C-0F84F90F991E.jpg',sold:true},
 {n:' White Balado Bag',p:25000,img:'https://i.postimg.cc/8zXG1KRn/9d6c432e-61fa-407f-b5a6-3f79734ba2ed.jpg'},
 {n:'Animal Print Bag',p:20000,img:'https://i.postimg.cc/N023QgfF/bf10e46e-0a62-44e3-8958-a4a40d0d3130.jpg'},
 {n:'Grey Bag',p:25000,img:'https://i.postimg.cc/m26pk0ng/ce9327cb-adbd-4adb-9ff3-813ee4666632.jpg'},
 {n:'Black Bag',p:15500,img:'https://i.postimg.cc/nVSGGqG4/fad8a68a-d1c7-456f-bab4-24a6b49d15d8.jpg'},
-{n:'Dark Brown Luxury Bag',p:40000,img:'https://i.postimg.cc/tgP92d6P/D67D5677-69D4-4E10-B1D2-C73E3195D52D.jpg'},
+{n:'Dark Brown Luxury Bag',p:40000,img:'https://i.postimg.cc/tgP92d6P/D67D5677-69D4-4E10-B1D2-C73E3195D52D.jpg',sold:true},
 {n:'FF Bag',p:18500,img:'https://i.postimg.cc/43rQTGnq/2c2443af-3705-4a16-adcb-4d79dae2f489.jpg'},
 ],
 glasses:[
@@ -1742,7 +1785,7 @@ glasses:[
 {n:'White Luxury Polo',p:28000,img:'https://i.postimg.cc/j27MwhFb/f14695b1-1d2a-4002-97ae-1ed02b539c94-removebg-preview.png'},
 {n:'Teal Boss Polo',p:28000,img:'https://i.postimg.cc/kGgn7B16/da285785-17d0-4594-85db-eb0b956310af-removebg-preview.png'},
 {n:'Ash Louis Vuitton Polo',p:30000,img:'https://i.postimg.cc/DzYV1BBT/763ba4d2-e010-4e6f-98f6-3882da5662ca.jpg'},
-{n:'Official Polo',p:22000,img:'https://i.postimg.cc/9F1L4zxj/30e09c67-df6b-4020-8e39-5a406fb396f2.jpg'},
+{n:'Official Polo',p:22000,img:'https://i.postimg.cc/9F1L4zxj/30e09c67-df6b-4020-8e39-5a406fb396f2.jpg',sold:true},
 {n:'Louis Vuitton Green Polo',p:30000,img:'https://i.postimg.cc/pX9mj6CM/6b7e1f44-db06-4730-bb62-779e05cee19c-removebg-preview.png'},
 {n:'Black Louis Vuitton',p:30000,img:'https://i.postimg.cc/RhWZcW7B/2dbab418-9828-4d3f-99dd-60842dc4849f.jpg'},
 {n:'Jeans Short',p:30000,img:'https://i.postimg.cc/x85BT5Jr/b42f42d6-3b8c-496e-9f10-72f8c05efff5-removebg-preview.png'},
@@ -1753,14 +1796,14 @@ glasses:[
 {n:'Ice blue Shirt',p:35000,img:'https://i.postimg.cc/NLhbtrbw/b76a46dd-133f-44e1-a2d7-1bab41853f2d-removebg-preview.png'},
 {n:'Burberry Luxury Shirt',p:35000,img:'https://i.postimg.cc/x89M3ys8/82a43b9f-eb20-4da5-9410-98f85ec64c7b-removebg-preview.png'},
 {n:'Burberry Blue Shirt',p:35000,img:'https://i.postimg.cc/MHRZHh0j/91b9a056-9490-47f9-b2df-49f474dde880-1-removebg-preview.png'},
-{n:'Armless Polo',p:15000,img:'https://i.postimg.cc/g06TCmG3/IMG-6044-removebg-preview.png'},
+{n:'Armless Polo',p:15000,img:'https://i.postimg.cc/g06TCmG3/IMG-6044-removebg-preview.png',sold:true},
 {n:'Blue Jean Short',p:30000,img:'https://i.postimg.cc/NfkYn8p3/8e37eb61-2911-49a7-90ae-bf3c00e720eb-removebg-preview.png'},
 {n:'Black Armless Polo ',p:22000,img:'https://i.postimg.cc/PqmMbxt9/IMG-6042-removebg-preview.png'},
-{n:'Sup Armless Polo',p:22000,img:'https://i.postimg.cc/G2XGzT6F/IMG-6041-removebg-preview.png'},
-{n:'Stripe 123 Luxury Polo',p:25000,img:'https://i.postimg.cc/s2DpWJND/48516b9c-4ec5-405a-94bf-df3cddc627ef-removebg-preview.png'},
-{n:'Ashy Premium Polo',p:25000,img:'https://i.postimg.cc/kGn9MB4C/3e729272-fff5-4be4-965f-d10cbc656dd2-removebg-preview.png'},
-{n:'Jahette Black Polo',p:25000,img:'https://i.postimg.cc/Kc9C39pM/0d86ac21-1166-40d0-a4a8-38e3df6864e3-removebg-preview.png'},
-{n:'White Jahette Polo',p:25000,img:'https://i.postimg.cc/sXx9kJYn/3e56067f-1ba4-4fd5-84aa-e8272114c6ac-removebg-preview.png'},
+{n:'Sup Armless Polo',p:22000,img:'https://i.postimg.cc/G2XGzT6F/IMG-6041-removebg-preview.png',sold:true},
+{n:'Stripe 123 Luxury Polo',p:25000,img:'https://i.postimg.cc/s2DpWJND/48516b9c-4ec5-405a-94bf-df3cddc627ef-removebg-preview.png',sold:true},
+{n:'Ashy Premium Polo',p:25000,img:'https://i.postimg.cc/kGn9MB4C/3e729272-fff5-4be4-965f-d10cbc656dd2-removebg-preview.png',sold:true},
+{n:'Jahette Black Polo',p:25000,img:'https://i.postimg.cc/Kc9C39pM/0d86ac21-1166-40d0-a4a8-38e3df6864e3-removebg-preview.png',sold:true},
+{n:'White Jahette Polo',p:25000,img:'https://i.postimg.cc/sXx9kJYn/3e56067f-1ba4-4fd5-84aa-e8272114c6ac-removebg-preview.png',sold:true},
 {n:'White Premium Polo',p:15000,img:'https://i.postimg.cc/KjXftMLX/IMG-6039-removebg-preview.png'},
 ]};
 
@@ -2141,7 +2184,7 @@ function initEditorsPicks(){
   ];
 
   const container=document.getElementById('editors-cards');
-  const badges=['Editor\'s Choice','Best Seller','New Drop','Trending','Iconic','Staff Pick','Must Have','Limited'];
+  const badges=['Sold\'s Recently','Best Seller','New Drop','Trending','Iconic','Staff Pick','Must Have','Limited'];
   picks.forEach((p,i)=>{
     const card=document.createElement('div');
     card.className='ed-card';
@@ -2271,8 +2314,11 @@ function mkCard(p){
     </button>
   </div>
 </div>
+
+
 <div class="cif">
   <div class="ccat">${p.cat==='clothes' ? 'Luxury Women Wear' :
+  
 p.cat==='shoes' ? 'Slippers Fits' :
 p.cat==='watches' ? 'Bag Sets' :
 p.cat==='glasses' ? 'Men Outfits' :
@@ -2280,6 +2326,7 @@ p.cat}</div>
   <div class="card-stars">${renderStars(rating)}</div>
   <div class="cn">${p.n}</div>
   <div class="cp">&#8358;${p.p.toLocaleString()}</div>
+  ${p.sold ? `<div class="sold-tag">SOLD OUT</div>` : ""}
   <div class="scarcity${/only|last|1 pair|2 pair/i.test(scarcity)?' urgent':''}">${scarcity}</div>
 </div>`;
   d.addEventListener('click',()=>openPDM(p.id));
@@ -2423,6 +2470,7 @@ function renderShop(){
 // =============================================
 // CART
 // =============================================
+ 
 function getProd(id){return ALL.find(p=>p.id===id);}
 function addCart(id){
   const p=getProd(id);if(!p)return;
@@ -2436,6 +2484,7 @@ function updateBadge(){
   const n=cart.reduce((a,b)=>a+b.qty,0);
   const el=document.getElementById('cc');el.textContent=n;el.style.display=n>0?'flex':'none';
 }
+
 function openCart(){
   renderCart();
   document.getElementById('cp').classList.add('open');
@@ -2573,6 +2622,10 @@ document.getElementById('orc-wa-btn').onclick = () => {
     '_blank'
   );
 };
+
+  
+  
+
 
   // Reset screenshot button state
   const ssBtn = document.getElementById('orc-screenshot-btn');
