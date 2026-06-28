@@ -1697,7 +1697,7 @@ let recentlyViewed = (function(){try{return JSON.parse(localStorage.getItem('rkf
 // ===== DATA =====
 const D={
 clothes:[
-{n:'Pink Luxury Two Piece',p:45000,img:'https://i.postimg.cc/C5B8xRRX/663a3b2c-b926-4beb-a145-7a3117d97803.jpg'},
+{n:'Pink Luxury Two Piece',p:45000,img:'https://i.postimg.cc/C5B8xRRX/663a3b2c-b926-4beb-a145-7a3117d97803.jpg',sold:true},
 {n:'Brown short gown',p:22000,img:'https://i.postimg.cc/sXnxS3F5/c2f70374-2dc9-4446-a134-6ea7994490a5.jpg'},
 {n:'Long Brown Luxury',p:25000,img:'https://i.postimg.cc/05TMC2MP/d466ccd9-fc4b-4204-a264-5141b8f8ace6.jpg',sold:true},
 {n:'Short Fur Only Black',p:24000,img:'https://i.postimg.cc/L6kXBkF0/61315735-a97d-4803-9279-a8eb7a798bb7.jpg'},
@@ -1708,12 +1708,12 @@ clothes:[
 {n:'Red Print',p: 24000,img:'https://i.postimg.cc/kXYHHzC5/8dd75044-d75c-4f14-9b79-52dc657a43b7.jpg'},
 {n:'Dark Brown Maxi',p:25000,img:'https://i.postimg.cc/bJRC9FLY/8d2fb063-7fc7-40b9-801a-39f85c8c035e.jpg'},
 {n:'Flowered Long Maxi',p:22000,img:'https://i.postimg.cc/BbVChWFs/6aa50285-dd55-4ef6-a359-3911694794f1.jpg',sold:true},
-{n:'Yellow Checkered',p:23000,img:'https://i.postimg.cc/WtcdpXL5/d80952d4-06fd-4eed-933f-fb25b91ccf45.jpg'},
+{n:'Yellow Checkered',p:23000,img:'https://i.postimg.cc/WtcdpXL5/d80952d4-06fd-4eed-933f-fb25b91ccf45.jpg',sold:true},
 {n:'Luxury Stripe', p:18000,img:'https://i.postimg.cc/c1gXFmhV/a12b9150-d9bc-40b7-9879-fb78e3514519.jpg',sold:true},
 {n:'Thick White Top',p: 10000,img:'https://i.postimg.cc/9FHtJjrf/8819cea5-0044-4d8c-bff9-857c6e60bd72.jpg'},
 {n:'Off shoulder Top',p:14000,img:'https://i.postimg.cc/4xLckCNp/678d60f2-3dd8-4a4e-9872-d4c72fea5e60.jpg'},
 {n:'Classy Jumpsuit',p:25000,img:'https://i.postimg.cc/ZnHR83Wd/74e1e98c-8f6d-494e-bcd8-6b03978493a2.jpg',sold:true},
-{n:'Short print design',p:24000,img:'https://i.postimg.cc/MZ3JQdTt/8b75a45c-58cb-4f05-80b3-78da5ff1beac.jpg'},
+{n:'Short print design',p:24000,img:'https://i.postimg.cc/MZ3JQdTt/8b75a45c-58cb-4f05-80b3-78da5ff1beac.jpg',sold:true},
 {n:'Ash Trouser', p:24000,img: 'https://i.postimg.cc/0yg3Y3qd/1f1e610e-6373-4327-8441-46a8765b71f5.jpg'},
 {n:'Light Blue Jean', p: 24000, img:'https://i.postimg.cc/tT1wtH7D/39e1f59d-986a-492d-a307-7e5c156b7f25.jpg'},
 {n:'Light Blue Jean', p: 24000, img:'https://i.postimg.cc/tT1wtH7D/39e1f59d-986a-492d-a307-7e5c156b7f25.jpg'},
@@ -1743,10 +1743,10 @@ clothes:[
 {n:'Premium Long Gown',p:25000,img:'https://i.postimg.cc/Rh4QR4Wd/IMG-5677-removebg-preview.png'},
 {n:'Maxi Light Green',p:35000,img:'https://i.postimg.cc/0NGzCm7R/IMG-5678-removebg-preview.png'},
 {n:'Flowered Maxi Print',p:35000,img:'https://i.postimg.cc/fbMzDP0L/IMG-5679-removebg-preview.png',sold:true},
-{n:'Red Two Piece',p:24000,img:'https://i.postimg.cc/Y0F0hWrP/IMG-5682-1-removebg-preview.png'},
+{n:'Red Two Piece',p:24000,img:'https://i.postimg.cc/Y0F0hWrP/IMG-5682-1-removebg-preview.png',sold:true},
 {n:'Red Shiny gown',p:25000,img:'https://i.postimg.cc/dV5CMGhc/IMG-5683-1-removebg-preview.png',sold:true},
 {n:'White Luxury Gown',p:25000,img:'https://i.postimg.cc/NfGZGwd6/IMG-5684-1-removebg-preview.png'},
-{n:'Red Tilt Gown',p:27000,img:'https://i.postimg.cc/LXNBNGjp/IMG-5685-1-removebg-preview.png'},
+{n:'Red Tilt Gown',p:27000,img:'https://i.postimg.cc/LXNBNGjp/IMG-5685-1-removebg-preview.png',sold:true},
 {n:'Yellow Two piece',p:25000,img:'https://i.postimg.cc/8zgG1Yr4/4c3c4709-92d9-4259-b5f1-a589de693aab-(1).jpg'},
 ],
 shoes:[
@@ -1755,7 +1755,7 @@ shoes:[
 {n:'Versace White',p:23000,img:'https://i.postimg.cc/RFK0gqFP/abbcc544-bf01-49ea-971d-49a3225a754e.jpg'},
 {n:'DG Slides',p:25000,img:'https://i.postimg.cc/YCYchPXg/5a33e0cb-f1e9-4cc2-8a56-5a2cf6900f43.jpg'},
 {n:'Original Hermes Slides',p:35000,img:'https://i.postimg.cc/jdYmBcqf/28e761ed-a175-4bb7-a95f-770d699eb6b1.jpg'},
-{n:'Hermes SLides',p:25000,img:'https://i.postimg.cc/zDFFXFSz/8f3f1342-71e3-4eed-b5bc-f0668a68f076.jpg'},
+{n:'Hermes SLides',p:25000,img:'https://i.postimg.cc/zDFFXFSz/8f3f1342-71e3-4eed-b5bc-f0668a68f076.jpg',sold:true},
 {n:'Mango Brand',p:22000,img:'https://i.postimg.cc/c4jgsvjx/5e323386-d628-40ec-8641-bef2d4bd3584.jpg'},
 {n:'Colorful Premium,',p:35000,img:'https://i.postimg.cc/mgjrPhpc/2c3ff965-ec9c-423b-a3c8-36a24b586fb6.jpg',sold:true},
 {n:'ZYK Slides',p:25000,img:'https://i.postimg.cc/nh3HHgMY/4f0494e7-daf4-4fc3-af20-241fbefc36bb.jpg'},
@@ -1774,8 +1774,8 @@ shoes:[
 {n:'Givenchy Slide',p:23000,img:'https://i.postimg.cc/L6MCXsZc/ec37e3b8-8389-4fd2-bef0-0798a47ae5af.jpg'},
 {n:'Gucci Slides',p:25000,img:'https://i.postimg.cc/sxPJSphX/c2f6ed1f-101e-4575-b2f8-a4550f7ed8c1.jpg'},
 {n:'Premium Slippers 22k each',p:22000,img:'https://i.postimg.cc/0QDGRpZw/IMG-6099.png'},
-{n:'Coach Premium',p:22000,img:'https://i.postimg.cc/mkMTSrLT/bee8553b-1132-4e0a-8a9e-aa7c6cd2ab78.jpg'},
-{n:'Hermes Yeloow and Black',p:22000,img:'https://i.postimg.cc/5N9WKpNP/IMG-6098-removebg-preview.png'},
+{n:'Coach Premium',p:22000,img:'https://i.postimg.cc/mkMTSrLT/bee8553b-1132-4e0a-8a9e-aa7c6cd2ab78.jpg',sold:true},
+{n:'Hermes Yeloow and Black',p:22000,img:'https://i.postimg.cc/5N9WKpNP/IMG-6098-removebg-preview.png',sold:true},
 {n:'Hilfiger slides all 22k Each',p:22000,img:'https://i.postimg.cc/7PFKtnM7/IMG-6097-removebg-preview.png'},
 {n:'Brown Dior',p:22000,img:'https://i.postimg.cc/k5PVkDYg/IMG-6096-removebg-preview.png'},
 {n:'White Zara Heel',p:30000,img:'https://i.postimg.cc/TwPsG2hB/IMG-6091-removebg-preview.png'},
@@ -1795,13 +1795,13 @@ watches:[
 {n:' Roserd Bag with box',p:30000,img:'https://i.postimg.cc/gjCt0hM5/522C4629-6D86-4814-991C-CF35C34FB9C0.jpg'},
 {n:' Brown classy Bag',p:35000,img:'https://i.postimg.cc/CLjpqMjw/5b8e93fa-cfb5-4b47-9254-49756541cd97.jpg'},
 {n:' Premium Purple bag',p:45000,img:'https://i.postimg.cc/GmcVTFLP/FF4D57FD-F660-47B7-97BF-163B6378472E.jpg'},
-{n:' Black Classy Bag',p:35000,img:'https://i.postimg.cc/Wb40DtR4/E49E212E-F8B4-40AF-A431-A2CED39B3D10.jpg'},
-{n:' Jeans Luxury Bag',p:22000,img:'https://i.postimg.cc/B6MXscv0/d2430b27-9880-40df-a291-207effe82b29.jpg'},
-{n:' Brown Hermes Bag',p:22000,img:'https://i.postimg.cc/0yR5THC5/CCA8FD35-7062-4C8A-BF5C-0F84F90F991E.jpg',sold:true},
+{n:' Black Classy Bag',p:35000,img:'https://i.postimg.cc/Wb40DtR4/E49E212E-F8B4-40AF-A431-A2CED39B3D10.jpg',},
+{n:' Jeans Luxury Bag',p:22000,img:'https://i.postimg.cc/B6MXscv0/d2430b27-9880-40df-a291-207effe82b29.jpg',sold:true},
+{n:' Brown Hermes Bag',p:22000,img:'https://i.postimg.cc/0yR5THC5/CCA8FD35-7062-4C8A-BF5C-0F84F90F991E.jpg'},
 {n:' White Balado Bag',p:25000,img:'https://i.postimg.cc/8zXG1KRn/9d6c432e-61fa-407f-b5a6-3f79734ba2ed.jpg'},
 {n:'Animal Print Bag',p:20000,img:'https://i.postimg.cc/N023QgfF/bf10e46e-0a62-44e3-8958-a4a40d0d3130.jpg'},
 {n:'Grey Bag',p:25000,img:'https://i.postimg.cc/m26pk0ng/ce9327cb-adbd-4adb-9ff3-813ee4666632.jpg'},
-{n:'Black Bag',p:15500,img:'https://i.postimg.cc/nVSGGqG4/fad8a68a-d1c7-456f-bab4-24a6b49d15d8.jpg'},
+{n:'Black Bag',p:15500,img:'https://i.postimg.cc/nVSGGqG4/fad8a68a-d1c7-456f-bab4-24a6b49d15d8.jpg',sold:true},
 {n:'Dark Brown Luxury Bag',p:40000,img:'https://i.postimg.cc/tgP92d6P/D67D5677-69D4-4E10-B1D2-C73E3195D52D.jpg',sold:true},
 {n:'FF Bag',p:18500,img:'https://i.postimg.cc/43rQTGnq/2c2443af-3705-4a16-adcb-4d79dae2f489.jpg'},
 ],
@@ -1970,7 +1970,7 @@ window.addEventListener('load',()=>{
   }, '+=0.05')
   .to('#pl-fl', {
     x: '150vw',
-    duration: 0.75, ease: 'expo.in'
+    duration: 0.75, ease: 'expo.in' 
   }, '<')
   .to('#pl-divider', {
     scale: 0, opacity: 0,
